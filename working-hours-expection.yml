@@ -1,0 +1,15 @@
+apiVersion: kube-green.com/v1alpha1
+kind: SleepInfo
+metadata:
+  name: working-hours
+  namespace: default
+spec:
+  weekdays: "1-5"
+  sleepAt: "08:30"
+  wakeUpAt: "09:00"
+  timeZone: "Etc/UTC"
+  suspendCronJobs: true
+  excludeRef:
+    - apiVersion: "apps/v1"
+      kind:       Deployment
+      name:       apache-web
